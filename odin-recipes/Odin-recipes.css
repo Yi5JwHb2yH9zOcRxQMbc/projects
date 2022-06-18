@@ -1,26 +1,183 @@
+/* http://meyerweb.com/eric/tools/css/reset/    v2.0 | 20110126   License: none (public domain) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-     background-image: ;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* web safe fonts: 
+    Arial (sans-serif)
+    Verdana (sans-serif)
+    Helvetica (sans-serif)
+    Tahoma (sans-serif)
+    Trebuchet MS (sans-serif)
+    Times New Roman (serif)
+    Georgia (serif)
+    Garamond (serif)
+    Courier New (monospace)
+    Brush Script MT (cursive)
+*/
+
+/* chain of cascade: https://www.theodinproject.com/lessons/foundations-css-foundations */ 
+/* 1 - in-line style on html page */ 
+/* 2 - last item on css page */ 
+/* 3 - multiple IDs */ 
+/* 4 - ID */ 
+/* 5 - multiple classes */ 
+/* 6 - class */ 
+/* 7 - multiple types (html elements) */ 
+/* 8 - type (html element) */ 
+/* universal */ 
+/* browser settings */ 
+
+/* Inheritance  */
+  /*  Inheritance to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t */ 
+  /*  explicitly write a rule for those descendants. Typography based properties (color, font-size, font-family, etc.) are usually */
+  /* inherited, while most other properties aren’t.*/
+
+
+/* HTML tags are "type" selectors */
+/* universal selector is an asterisk  with * as the element name in the CSS */
+
+/* for inside HTML file, put this in the <head> section: 
+<style>
+    div {
+      color: white;
+      background-color: black;
+    }
+
+    p {
+      color: red;
+    }
+  </style> */ 
+
+
+/* in-line style changes go inside the html element tag: <div style="color: white; background-color: black;">...</div> */ 
+
+
+/* comment */ 
+/* comment */ 
+/* comment */ 
+
+
+body {
+  background-color: white;
      font-family: sans-serif;
      padding: 20px;
    }
-   
-   h1 {
+      h1 {
      font-size: 40px;
      margin-top: 0;
      margin-bottom: 15px;
    }
-   
-   h2 {
+      h2 {
      font-size: 30px;
    }
-   
-   .established {
-     font-style: italic;
-   }
-   
+     
    h1, h2, p {
      text-align: center;
    }
+ 
+  
+   /* class selector has a period in front of the word with this format: .established */
+   .established {
+    font-style: italic;
+  }
+   /* in the HTML file, you can use two classes like this: class="alert-text severe-alert" */ 
+
+   /*Elements on the HTML page can only have one ID. They can have multiple classes. */
+   /*An ID selector is created with a hashtag like this: */
+ #ID-selector { 
+   color: blue; 
+    } 
+
+/*You can group selectors together if they share common qualities. Then separate them for their unique qualities: */
+.read, .unread {
+  color: white;
+  background-color: black;
+}
+.read {
+  background-color: green;
+}
+.unread {
+  background-color: green;
+}
+
+/* You may chain classes or a class and ID together using periods, like so: */ 
+.subsection.header {
+  color: red;
+}
+/* This will look for anything with both classes of subsection and header in the HTML element and color them red. */ 
+
+/* To chain a class and ID, use the usual period before the class and the # before the ID selector. */ 
+.subsection#preview {
+  color: blue;
+}
+
+/* Descendent Combinators: A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.So something like .ancestor .child would select an element with the class child if it has an ancestor with the class ancestor. Another way to think of it is child will only be selected if it is nested inside of ancestor, no matter how deep. */ 
+
+/*Here is the HTML as an example for the CSS below it, where the contents for B and C will be changed but D will not: */
+/* <!-- index.html --> */
+
+/* <div class="ancestor"> <!-- A --> */
+/*  <div class="contents"> <!-- B --> */
+/*    <div class="contents"> <!-- C --> */
+/*    </div> */
+/*  </div> */
+/* </div> */
+/* <div class="contents"></div> <!-- D --> */
+
+.ancestor .contents {
+  background-color: green;
+}
+
+
+/* comment */ 
+/* comment */ 
+/* comment */ 
+/* comment */ 
+/* comment */ 
+
+
    
    .menu {
      width: 80%;
@@ -37,7 +194,10 @@ body {
      display: block;
      margin-left: auto;
      margin-right: auto;
-   }
+     height: auto;
+     width: 500px;
+    }
+    
    
    hr {
      height: 2px;
@@ -80,6 +240,8 @@ body {
      margin-bottom: 5px;
    }
    
+   /* anchor tags selectors are a, a:visited, etc. */
+
    a {
      color: black;
    }
